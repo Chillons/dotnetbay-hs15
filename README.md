@@ -1,4 +1,4 @@
-# dotnetbay - A .NET Auction Solution 
+# dotnetbay - A .NET Auction Solution
 Master: [![Build status](https://ci.appveyor.com/api/projects/status/gh796t754k0t5spa/branch/master?svg=true)](https://ci.appveyor.com/project/michaelschnyder/dotnetbay-hs15/branch/master)
 Project: [![Build status](https://ci.appveyor.com/api/projects/status/gh796t754k0t5spa?svg=true)](https://ci.appveyor.com/project/michaelschnyder/dotnetbay-hs15)
 
@@ -21,7 +21,7 @@ The following products / tools are needed to contribute / fork.
 **For Development**
 * Microsoft Visual Studio 2015 (at least Community Version). [https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx "https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx")
 * Jetbrains ReSharper (optional). [https://www.jetbrains.com/student/](https://www.jetbrains.com/student/ "https://www.jetbrains.com/student/")
-* StyleCop Rules (optional, VS 2015 only). [https://johnkoerner.com/csharp/using-analyzers-in-your-projects/] ("https://johnkoerner.com/csharp/using-analyzers-in-your-projects/") 
+* StyleCop Rules (optional, VS 2015 only). [https://johnkoerner.com/csharp/using-analyzers-in-your-projects/] ("https://johnkoerner.com/csharp/using-analyzers-in-your-projects/")
 
 
 **For Pleasure**
@@ -30,7 +30,8 @@ The following products / tools are needed to contribute / fork.
 * NCrunch [http://www.ncrunch.net/](http://www.ncrunch.net/ http://www.ncrunch.net/)
 
 ## Authors
-* Michael Schnyder
+* Maurice Gschwind
+* Benjamin Leber
 
 ## License
 Licensed under the MIT License
