@@ -24,7 +24,7 @@ namespace DotNetBay.WPF
     public partial class MainWindow : Window
     {
 
-        public ObservableCollection<Auction> auctions = new ObservableCollection<Auction>();
+        public ObservableCollection<Auction> auctions;
 
         public ObservableCollection<Auction> Auctions
         {
@@ -35,11 +35,11 @@ namespace DotNetBay.WPF
 
         public MainWindow()
         {
-
+            this.DataContext = this;
             var memberService = new SimpleMemberService(App.MainRepository);
             var service = new AuctionService(App.MainRepository, memberService);
-
-            InitializeComponent();
+            this.auctions = new ObservableCollection<Auction>(service.GetAll());
+            this.InitializeComponent();
 
      
         }
