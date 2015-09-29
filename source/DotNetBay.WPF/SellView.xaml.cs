@@ -23,5 +23,10 @@ namespace DotNetBay.WPF
         {
             InitializeComponent();
         }
+
+        private void CancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

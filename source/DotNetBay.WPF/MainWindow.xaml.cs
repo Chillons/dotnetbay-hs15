@@ -46,13 +46,13 @@ namespace DotNetBay.WPF
 
         private void SellButtonClick(object sender, RoutedEventArgs e)
         {
-            var sellView = new SellView();
+            var sellView = new SellView {Owner = this};
             sellView.ShowDialog(); // Blocking }
         }
 
         private void BuyButtonClick(object sender, RoutedEventArgs e)
         {
-            var bidView = new BidView();
+            var bidView = new BidView(this.dataGrid.SelectedItem as Auction) {Owner = this};
             bidView.ShowDialog();
         }
     }

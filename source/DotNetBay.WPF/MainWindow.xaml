@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DotNetBay.WPF"
         d:DataContext="{d:DesignInstance Type=local:MainWindow}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="684.649">
+        Title="MainWindow" Height="350" Width="1200">
     <Window.Resources>
         <local:BooleanToStatusTextConverter  
                        x:Key="BooleanToStatusTextConverter" />

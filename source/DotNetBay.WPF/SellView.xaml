@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DotNetBay.WPF"
         mc:Ignorable="d"
-        Title="SellView" Height="300" Width="400">
+        Title="SellView" Height="300" Width="400"
+        WindowStartupLocation="CenterOwner">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -40,7 +41,7 @@
         <DatePickerTextBox Grid.Column="1" Grid.Row="5"/>
 
         <TextBlock Grid.Column="0" Grid.Row="6" Text="Image"/>
-        <Grid Grid.Row="6" Grid.Column="2">
+        <Grid Grid.Row="6" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="8*"/>
                 <ColumnDefinition Width="*"/>
@@ -58,7 +59,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="1" Grid.Row="0" Margin="2,0,2,0">Add Auction</Button>
-            <Button Grid.Column="2" Grid.Row="0" Margin="2,0,2,0">Cancel</Button>
+            <Button Grid.Column="2" Grid.Row="0" Margin="2,0,2,0" Click="CancelButtonClick">Cancel</Button>
         </Grid>
     </Grid>
 </Window>
