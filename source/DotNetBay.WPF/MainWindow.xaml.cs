@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DotNetBay.Core;
 using DotNetBay.Model;
 
 namespace DotNetBay.WPF
@@ -23,10 +24,24 @@ namespace DotNetBay.WPF
     public partial class MainWindow : Window
     {
 
+        public ObservableCollection<Auction> auctions = new ObservableCollection<Auction>();
+
+        public ObservableCollection<Auction> Auctions
+        {
+            get { return auctions; }
+            private set { }
+        }
+
+
         public MainWindow()
         {
+
+            var memberService = new SimpleMemberService(App.MainRepository);
+            var service = new AuctionService(App.MainRepository, memberService);
+
             InitializeComponent();
 
+     
         }
     }
 }

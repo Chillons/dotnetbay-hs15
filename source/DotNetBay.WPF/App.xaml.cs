@@ -18,19 +18,16 @@ namespace DotNetBay.WPF
     /// </summary>
     public partial class App : Application
     {
-        public readonly IMainRepository MainRepository;
-        public readonly IAuctionRunner AuctionRunner;
+        public static readonly IMainRepository MainRepository = new FileSystemMainRepository("WPFStore.json");
+        public static readonly IAuctionRunner AuctionRunner = new AuctionRunner(App.MainRepository);
 
         public App()
         {
-            this.MainRepository = new FileSystemMainRepository("WPFStore.json");
-            this.AuctionRunner = new AuctionRunner(this.MainRepository);
-            this.AuctionRunner.Start();
 
 
             // Dummy Data 
-            var memberService = new SimpleMemberService(this.MainRepository);
-            var service = new AuctionService(this.MainRepository, memberService);
+            var memberService = new SimpleMemberService(MainRepository);
+            var service = new AuctionService(MainRepository, memberService);
             if (!service.GetAll().Any())
             {
                 var me = memberService.GetCurrentMember();
