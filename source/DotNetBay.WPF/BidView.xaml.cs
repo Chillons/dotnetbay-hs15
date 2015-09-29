@@ -22,6 +22,7 @@ namespace DotNetBay.WPF
         public BidView()
         {
             InitializeComponent();
+            DataContext = this;
         }
     }
 }
