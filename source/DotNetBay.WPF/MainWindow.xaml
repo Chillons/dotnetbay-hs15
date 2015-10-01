@@ -24,13 +24,13 @@
                 <DataGridTextColumn Header="Current Price"  
                     Binding="{Binding Path=CurrentPrice}" />
                 <DataGridTextColumn Header="Bids"  
-                    Binding="{Binding Path=Bids}" />
+                    Binding="{Binding Path=Bids.Count}" />
                 <DataGridTextColumn Header="Starts"  
                     Binding="{Binding Path=StartDateTimeUtc}" />
                 <DataGridTextColumn Header="Ends"  
                     Binding="{Binding Path=EndDateTimeUtc}" />
                 <DataGridTextColumn Header="Seller"  
-                    Binding="{Binding Path=Seller}" />
+                    Binding="{Binding Path=Seller.DisplayName}" />
                 <DataGridTextColumn Header="Current Winner"  
                     Binding="{Binding Path=ActiveBid}" />
                 <DataGridTextColumn Header="Closed"  
