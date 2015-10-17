@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 using DotNetBay.Core;
 using DotNetBay.Core.Execution;
@@ -11,7 +7,7 @@ using DotNetBay.Data.FileStorage;
 using DotNetBay.Interfaces;
 using DotNetBay.Model;
 
-namespace DotNetBay.WPF
+namespace DotNetBay.WPF.View
 {
     /// <summary>
     /// Interaction logic for App.xaml

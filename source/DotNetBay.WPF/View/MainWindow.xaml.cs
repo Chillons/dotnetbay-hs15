@@ -1,22 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using DotNetBay.Core;
 using DotNetBay.Model;
 
-namespace DotNetBay.WPF
+namespace DotNetBay.WPF.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -28,7 +15,7 @@ namespace DotNetBay.WPF
 
         public ObservableCollection<Auction> Auctions
         {
-            get { return auctions; }
+            get { return this.auctions; }
             private set { }
         }
 
@@ -46,13 +33,13 @@ namespace DotNetBay.WPF
 
         private void SellButtonClick(object sender, RoutedEventArgs e)
         {
-            var sellView = new SellView {Owner = this};
+            var sellView = new View.SellView {Owner = this};
             sellView.ShowDialog(); // Blocking }
         }
 
         private void BuyButtonClick(object sender, RoutedEventArgs e)
         {
-            var bidView = new BidView(this.dataGrid.SelectedItem as Auction) {Owner = this};
+            var bidView = new View.BidView(this.dataGrid.SelectedItem as Auction) {Owner = this};
             bidView.ShowDialog();
         }
     }
