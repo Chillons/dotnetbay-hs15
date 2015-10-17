@@ -31,7 +31,7 @@
                 <DataGridTextColumn Header="Current Price" Binding="{Binding CurrentPrice}" />
                 <DataGridTextColumn Header="Bids"  Binding="{Binding BidCount}" />
                 <DataGridTextColumn Header="Starts" Binding="{Binding StartDateTimeLocal, StringFormat=dd.MM.yyy HH:mm:ss}" />
-                <DataGridTextColumn Header="Ends"  Binding="{Binding EndDateTimeLocal}" />
+                <DataGridTextColumn Header="Ends"  Binding="{Binding EndDateTimeLocal, StringFormat=dd.MM.yyy HH:mm:ss}" />
                 <DataGridTextColumn Header="Seller" Binding="{Binding Seller}" />
                 <DataGridTextColumn Header="Current Winner" Binding="{Binding CurrentWinner}" />
                 <DataGridTextColumn Header="Closed" Binding="{Binding ClosedDateLocal, StringFormat=dd.MM.yyy HH:mm:ss}" />

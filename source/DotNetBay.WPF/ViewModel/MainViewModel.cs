@@ -39,13 +39,7 @@ namespace DotNetBay.WPF.ViewModel
             }
         }
 
-        public ObservableCollection<AuctionViewModel> Auctions
-        {
-            get
-            {
-                return this.auctions;
-            }
-        }
+        public ObservableCollection<AuctionViewModel> Auctions => this.auctions;
 
         public ICommand AddNewAuctionCommand { get; private set; }
 
@@ -67,11 +61,11 @@ namespace DotNetBay.WPF.ViewModel
 
         private void ApplyChanges(Auction auction)
         {
-            var auctionVm = this.auctions.FirstOrDefault(vm => vm.Auction == auction);
+            var auctionViewModel = this.auctions.FirstOrDefault(vm => vm.Auction == auction);
 
-            if (auctionVm != null)
+            if (auctionViewModel != null)
             {
-                auctionVm.Update(auction);
+                auctionViewModel.Update(auction);
             }
         }
     }

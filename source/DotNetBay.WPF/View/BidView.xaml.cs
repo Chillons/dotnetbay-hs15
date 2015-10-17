@@ -10,12 +10,6 @@ namespace DotNetBay.WPF.View
     /// </summary>
     public partial class BidView : Window
     {
-
-        private Auction auction;
-
-        private BidViewModel viewModel;
-
-
         public BidView(Auction auction)
         {
             var app = Application.Current as App;

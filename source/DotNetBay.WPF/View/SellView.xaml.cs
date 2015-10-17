@@ -12,9 +12,6 @@ namespace DotNetBay.WPF.View
     /// </summary>
     public partial class SellView : Window
     {
-
-        private SellViewModel viewModel;
-
         public SellView()
         {
             this.InitializeComponent();

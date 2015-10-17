@@ -30,49 +30,26 @@ namespace DotNetBay.WPF.ViewModel
             this.EndDateTimeUtc = DateTime.UtcNow.AddDays(7);
         }
 
-        public string Title
-        {
-            get; set;
-        }
-
-        public string Description
-        {
-            get; set;
-        }
-
-        public double StartPrice
-        {
-            get; set;
-        }
-
-        public DateTime StartDateTimeUtc
-        {
-            get; set;
-        }
-
-        public DateTime EndDateTimeUtc
-        {
-             get; set;
-        }
-
-        public string Image
-        {
-            get; set;
-        }
         public ICommand CloseDialogCommand { get; set; }
 
         public ICommand AddAuctionAndCloseCommand { get; private set; }
 
         public ICommand SelectImageFileCommand { get; private set; }
 
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
+        public double StartPrice { get; set; }
+
+        public DateTime StartDateTimeUtc { get; set; }
+
+        public DateTime EndDateTimeUtc { get; set; }
 
         public string FilePathToImage
         {
             get { return this.filePathToImage; }
-            set
-            {
-                this.Set(() => this.FilePathToImage, ref this.filePathToImage, value);
-            }
+            set { this.Set(() => this.FilePathToImage, ref this.filePathToImage, value); }
         }
 
         private void AddActionAndClose(Window window)
