@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using DotNetBay.Core;
@@ -13,7 +9,7 @@ using Microsoft.Win32;
 
 namespace DotNetBay.WPF.ViewModel
 {
-    class SellViewModel : ViewModelBase
+    public class SellViewModel : ViewModelBase
     {
         private readonly IAuctionService auctionService;
         private readonly IMemberService memberService;

@@ -8,7 +8,6 @@
         x:Name="Window"
         mc:Ignorable="d"
         Title="SellView" Height="300" Width="400"
-        WindowStartupLocation="CenterOwner" 
         d:DataContext="{d:DesignInstance Type=viewModel:SellViewModel}">
     <Grid Margin="10">
         <Grid.RowDefinitions>

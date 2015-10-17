@@ -18,7 +18,7 @@ namespace DotNetBay.WPF.View
         public SellView()
         {
             this.InitializeComponent();
-            var app = Application.Current as WPF.App;
+            var app = Application.Current as App;
 
             var memberService = new SimpleMemberService(app.MainRepository);
             var auctionService = new AuctionService(app.MainRepository, memberService);

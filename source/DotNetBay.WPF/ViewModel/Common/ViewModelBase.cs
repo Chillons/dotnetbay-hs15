@@ -7,7 +7,7 @@ using DotNetBay.WPF.Annotations;
 
 namespace DotNetBay.WPF.ViewModel.Common
 {
-    class ViewModelBase : INotifyPropertyChanged, INotifyPropertyChanging
+    public class ViewModelBase : INotifyPropertyChanged, INotifyPropertyChanging
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

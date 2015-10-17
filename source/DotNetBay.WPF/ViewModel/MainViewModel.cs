@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using DotNetBay.Core;
 using DotNetBay.Core.Execution;
@@ -13,7 +9,7 @@ using DotNetBay.WPF.ViewModel.Common;
 
 namespace DotNetBay.WPF.ViewModel
 {
-    class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase
     {
         private readonly IAuctioneer auctioneer;
 

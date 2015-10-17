@@ -11,7 +11,7 @@ using DotNetBay.WPF.ViewModel.Common;
 
 namespace DotNetBay.WPF.ViewModel
 {
-    class BidViewModel : ViewModelBase
+    public class BidViewModel : ViewModelBase
     {
         private readonly IMemberService memberService;
 
@@ -39,7 +39,7 @@ namespace DotNetBay.WPF.ViewModel
         public double YourBid { get; set; }
 
         #region AuctionProperties
-        public string Title
+        public string AuctionTitle
         {
             get { return this.selectedAuction.Title; }
         }

@@ -16,7 +16,16 @@
         <Button HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Command="{Binding AddNewAuctionCommand}">New Auction</Button>
         <DataGrid Margin="10,35,10,10" ItemsSource="{Binding Auctions}" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Auction"  Binding="{Binding Title}" />
+                <DataGridTemplateColumn Header="Auction">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Title}" FontWeight="Bold" ></TextBlock>
+                                <Image Source="{Binding Image}" MaxHeight="100" MaxWidth="120"></Image>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Status" Binding="{Binding IsRunning, Converter={StaticResource BooleanToStatusTextConverter}}"/>
                 <DataGridTextColumn Header="Start Price"  Binding="{Binding StartPrice}" />
                 <DataGridTextColumn Header="Current Price" Binding="{Binding CurrentPrice}" />
@@ -27,7 +36,6 @@
                 <DataGridTextColumn Header="Current Winner" Binding="{Binding CurrentWinner}" />
                 <DataGridTextColumn Header="Closed" Binding="{Binding ClosedDateLocal, StringFormat=dd.MM.yyy HH:mm:ss}" />
                 <DataGridTextColumn Header="Winner" Binding="{Binding FinalWinner}" />
-                
                 <DataGridTemplateColumn Header="Place Bid">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

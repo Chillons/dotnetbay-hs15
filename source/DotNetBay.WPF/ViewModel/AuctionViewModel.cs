@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using DotNetBay.Model;
 using DotNetBay.WPF.View;
@@ -10,7 +6,7 @@ using DotNetBay.WPF.ViewModel.Common;
 
 namespace DotNetBay.WPF.ViewModel
 {
-    internal class AuctionViewModel : ViewModelBase
+    public class AuctionViewModel : ViewModelBase
     {
         private Auction auction;
 
@@ -37,7 +33,10 @@ namespace DotNetBay.WPF.ViewModel
             this.Apply();
         }
 
-        public ICommand AddBidCommand { get; private set; }
+        public ICommand AddBidCommand {
+            get;
+            private set;
+        }
 
         public string Title
         {
