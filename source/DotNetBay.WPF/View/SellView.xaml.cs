@@ -1,6 +1,9 @@
 using System;
 using System.Windows;
+using DotNetBay.Core;
+using DotNetBay.WPF.ViewModel;
 using Microsoft.Win32;
+
 
 namespace DotNetBay.WPF.View
 {
@@ -9,29 +12,18 @@ namespace DotNetBay.WPF.View
     /// </summary>
     public partial class SellView : Window
     {
+
+        private SellViewModel viewModel;
+
         public SellView()
         {
             this.InitializeComponent();
-        }
+            var app = Application.Current as WPF.App;
 
-        private void CancelButtonClick(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+            var memberService = new SimpleMemberService(app.MainRepository);
+            var auctionService = new AuctionService(app.MainRepository, memberService);
 
-        private void ClickSelectImage(object sender, RoutedEventArgs e)
-        {
-            var dialog = new OpenFileDialog();
-            dialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
-            if (dialog.ShowDialog() == true)
-            {
-                this.ImagePath.Text = dialog.FileName;
-            }
-        }
-
-        private void AddAuctionClick(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
+            this.DataContext = new SellViewModel(memberService, auctionService);
         }
     }
 }

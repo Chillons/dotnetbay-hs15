@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using DotNetBay.Core;
 using DotNetBay.Model;
+using DotNetBay.WPF.ViewModel;
 
 namespace DotNetBay.WPF.View
 {
@@ -12,34 +13,17 @@ namespace DotNetBay.WPF.View
 
         private Auction auction;
 
+        private BidViewModel viewModel;
+
 
         public BidView(Auction auction)
         {
-            this.auction = auction;
-            this.DataContext = auction;
-            this.InitializeComponent();
-            this.BidValue.Focus();
-        }
+            var app = Application.Current as App;
 
-        private void PlaceBidButtonClick(object sender, RoutedEventArgs e)
-        {
-            double newBid = 0;
-            if (double.TryParse(this.BidValue.Text, out newBid) && newBid > this.auction.CurrentPrice && !this.auction.IsClosed)
-            {
-                var memberService = new SimpleMemberService(App.MainRepository);
-                var service = new AuctionService(App.MainRepository, memberService);
-                service.PlaceBid(this.auction, newBid);
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Error Placing Bid");
-            }
-        }
+            var memberService = new SimpleMemberService(app.MainRepository);
+            var auctionService = new AuctionService(app.MainRepository, memberService);
 
-        private void CancelButtonClick(object sender, RoutedEventArgs e)
-        {
-            this.Close();
+            this.DataContext = new BidViewModel(auction, memberService, auctionService);
         }
     }
 }

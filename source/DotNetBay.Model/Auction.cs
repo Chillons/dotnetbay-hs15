@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DotNetBay.Model
 {
-    public class Auction
+    public class Auction : INotifyPropertyChanged
     {
         public Auction()
         {
@@ -48,5 +49,13 @@ namespace DotNetBay.Model
         public bool IsClosed { get; set; }
 
         public bool IsRunning { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(string name)
+        {
+            if (this.PropertyChanged != null)
+                this.PropertyChanged(this, new PropertyChangedEventArgs(name));
+        }
     }
 }

@@ -3,10 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DotNetBay.WPF"
+        xmlns:viewModel="clr-namespace:DotNetBay.WPF.ViewModel"
+        xmlns:wpftk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        x:Name="Window"
         mc:Ignorable="d"
         Title="SellView" Height="300" Width="400"
-        WindowStartupLocation="CenterOwner">
+        WindowStartupLocation="CenterOwner" 
+        d:DataContext="{d:DesignInstance Type=viewModel:SellViewModel}">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -26,19 +29,19 @@
         <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="Add new Auction" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
         <TextBlock Grid.Column="0" Grid.Row="1" Text="Title"/>
-        <TextBox Grid.Column="1" Grid.Row="1"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Title}"/>
 
         <TextBlock Grid.Column="0" Grid.Row="2" Text="Description"/>
-        <TextBox Grid.Column="1" Grid.Row="2"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Description}"/>
 
         <TextBlock Grid.Column="0" Grid.Row="3" Text="Start Price"/>
-        <TextBox Grid.Column="1" Grid.Row="3"/>
+        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding StartPrice}"/>
 
         <TextBlock Grid.Column="0" Grid.Row="4" Text="Start"/>
-        <DatePickerTextBox Grid.Column="1" Grid.Row="4"/>
+        <wpftk:DateTimePicker Grid.Column="1" Grid.Row="4" Text="{Binding StartDateTimeUtc}"/>
 
         <TextBlock Grid.Column="0" Grid.Row="5" Text="End"/>
-        <DatePickerTextBox Grid.Column="1" Grid.Row="5"/>
+        <wpftk:DateTimePicker Grid.Column="1" Grid.Row="5" Text="{Binding EndDateTimeUtc}"/>
 
         <TextBlock Grid.Column="0" Grid.Row="6" Text="Image"/>
         <Grid Grid.Row="6" Grid.Column="1">
@@ -46,8 +49,8 @@
                 <ColumnDefinition Width="8*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="0" Grid.Row="0" Name="ImagePath"/>
-            <Button Grid.Column="1" Grid.Row="0" Margin="2,0,2,0" Click="ClickSelectImage">...</Button>
+            <TextBox Grid.Column="0" Grid.Row="0" Name="ImagePath" Text="{Binding FilePathToImage}"/>
+            <Button Grid.Column="1" Grid.Row="0" Margin="2,0,2,0" Command="{Binding SelectImageFileCommand}">...</Button>
         </Grid>
 
 
@@ -58,8 +61,8 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="1" Grid.Row="0" Margin="2,0,2,0" Click="AddAuctionClick">Add Auction</Button>
-            <Button Grid.Column="2" Grid.Row="0" Margin="2,0,2,0" Click="CancelButtonClick">Cancel</Button>
+            <Button Grid.Column="1" Grid.Row="0" Margin="2,0,2,0" Command="{Binding AddAuctionAndCloseCommand}" CommandParameter="{Binding ElementName=Window}">Add Auction</Button>
+            <Button Grid.Column="2" Grid.Row="0" Margin="2,0,2,0" Command="{Binding CloseDialogCommand}" CommandParameter="{Binding ElementName=Window}">Cancel</Button>
         </Grid>
     </Grid>
 </Window>
