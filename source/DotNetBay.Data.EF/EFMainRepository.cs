@@ -22,42 +22,48 @@ namespace DotNetBay.Data.EF
 
         public IQueryable<Auction> GetAuctions()
         {
-            throw new NotImplementedException();
+            return this.context.Auctions.Include(a => a.Bids);
         }
 
         public IQueryable<Member> GetMembers()
         {
-            throw new NotImplementedException();
+            return this.context.Members.Include(m => m.Auctions);
         }
 
         public Auction Add(Auction auction)
         {
-            throw new NotImplementedException();
+            this.context.Auctions.Add(auction);
+
+            return auction;
         }
 
         public Auction Update(Auction auction)
         {
-            throw new NotImplementedException();
+            return auction;
         }
 
         public Bid Add(Bid bid)
         {
-            throw new NotImplementedException();
+            this.context.Bids.Add(bid);
+
+            return bid;
         }
 
         public Bid GetBidByTransactionId(Guid transactionId)
         {
-            throw new NotImplementedException();
+            return this.context.Bids.FirstOrDefault(b => b.TransactionId == transactionId);
         }
 
         public Member Add(Member member)
         {
-            throw new NotImplementedException();
+            this.context.Members.Add(member);
+
+            return member;
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            this.context.SaveChanges();
         }
     }
 }
