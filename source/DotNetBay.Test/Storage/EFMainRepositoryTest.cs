@@ -5,10 +5,12 @@ using System.Data.Entity.SqlServer;
 using DotNetBay.Interfaces;
 using DotNetBay.Data.EF;
 using DotNetBay.Data.EF.Migrations;
+using NUnit.Framework;
 
 namespace DotNetBay.Test.Storage
 {
-    class EFMainRepositoryTest : MainRepositoryTestBase
+    [Category("Database")]
+    public class EFMainRepositoryTest : MainRepositoryTestBase
     {
         public EFMainRepositoryTest()
         {
