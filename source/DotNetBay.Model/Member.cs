@@ -17,6 +17,8 @@ namespace DotNetBay.Model
 
         public string EMail { get; set; }
 
+        public string Location { get; set; }
+
         public List<Auction> Auctions { get; set; }
 
         public List<Bid> Bids { get; set; } 
