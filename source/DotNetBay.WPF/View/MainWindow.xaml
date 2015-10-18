@@ -20,8 +20,8 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <TextBlock Text="{Binding Title}" FontWeight="Bold" ></TextBlock>
-                                <Image Source="{Binding Image}" MaxHeight="100" MaxWidth="120"></Image>
+                                <TextBlock Text="{Binding AuctionTitle}" FontWeight="Bold" ></TextBlock>
+                                <Image Source="{Binding AuctionImage}" MaxHeight="100" MaxWidth="120"></Image>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

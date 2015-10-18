@@ -12,6 +12,9 @@ namespace DotNetBay.WPF.View
     {
         public BidView(Auction auction)
         {
+
+            this.InitializeComponent();
+
             var app = Application.Current as App;
 
             var memberService = new SimpleMemberService(app.MainRepository);

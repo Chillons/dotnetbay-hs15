@@ -38,12 +38,12 @@ namespace DotNetBay.WPF.ViewModel
             private set;
         }
 
-        public string Title
+        public string AuctionTitle
         {
             get { return this.auction.Title; }
         }
 
-        public byte[] Image
+        public byte[] AuctionImage
         {
             get { return this.auction.Image; }
         }

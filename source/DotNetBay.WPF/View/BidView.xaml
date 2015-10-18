@@ -4,11 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModel="clr-namespace:DotNetBay.WPF.ViewModel"
-        mc:Ignorable="d"
-        Title="BidView" Height="300" Width="300"
         d:DataContext="{d:DesignInstance Type=viewModel:BidViewModel}"
+        mc:Ignorable="d"
         x:Name="Window"
-        WindowStartupLocation="CenterOwner">
+        Title="BidView" Height="300" Width="300">
+
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -19,7 +19,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
