@@ -22,7 +22,7 @@ namespace DotNetBay.Data.EF
 
         public IQueryable<Auction> GetAuctions()
         {
-            return this.context.Auctions.Include(a => a.Bids);
+            return this.context.Auctions.Include(a => a.Bids).Include(a => a.Seller).Include(a => a.ActiveBid).Include(a => a.Winner);
         }
 
         public IQueryable<Member> GetMembers()
