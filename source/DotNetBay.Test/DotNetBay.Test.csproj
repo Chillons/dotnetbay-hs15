@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DotNetBay.Test</RootNamespace>
     <AssemblyName>DotNetBay.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,10 +36,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -53,6 +64,7 @@
     <Compile Include="Core\AuctioneerTests.cs" />
     <Compile Include="Core\MemberServiceTest.cs" />
     <Compile Include="Core\MockedMemberService.cs" />
+    <Compile Include="Storage\EFMainRepositoryTest.cs" />
     <Compile Include="Storage\FileSystemMainRepositoryTests.cs" />
     <Compile Include="Storage\TempDirectory.cs" />
     <Compile Include="Storage\TempFile.cs" />
@@ -63,6 +75,10 @@
     <ProjectReference Include="..\DotNetBay.Core\DotNetBay.Core.csproj">
       <Project>{9EF46B21-B552-4CC6-A4C0-E81091A4064B}</Project>
       <Name>DotNetBay.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DotNetBay.Data.EF\DotNetBay.Data.EF.csproj">
+      <Project>{9e7a2868-be33-4ae9-b8e4-f23910219ff7}</Project>
+      <Name>DotNetBay.Data.EF</Name>
     </ProjectReference>
     <ProjectReference Include="..\DotNetBay.Data.FileStorage\DotNetBay.Data.FileStorage.csproj">
       <Project>{92942123-C7EC-4418-9B48-F5D62BE7E7A3}</Project>
@@ -78,6 +94,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
