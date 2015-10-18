@@ -11,7 +11,10 @@ namespace DotNetBay.Data.EF
     {
         public MainDbContext() : base("DatabaseConnection")
         {
-            
+            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
         }
+
+
     }
 }
