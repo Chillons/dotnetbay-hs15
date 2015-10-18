@@ -1,0 +1,26 @@
+﻿using System.Collections.ObjectModel;
+using System.Windows;
+using DotNetBay.Core;
+using DotNetBay.Model;
+using DotNetBay.WPF.ViewModel;
+
+namespace DotNetBay.WPF.View
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+
+        public MainWindow()
+        {
+            this.InitializeComponent();
+
+            var app = Application.Current as App;
+            var memberService = new SimpleMemberService(app.MainRepository);
+            var auctionService = new AuctionService(app.MainRepository, memberService);
+
+            this.DataContext = new MainViewModel(app.AuctionRunner.Auctioneer, auctionService);
+        }
+    }
+}
