@@ -152,6 +152,10 @@
       <Project>{9e7a2868-be33-4ae9-b8e4-f23910219ff7}</Project>
       <Name>DotNetBay.Data.EF</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DotNetBay.Interfaces\DotNetBay.Interfaces.csproj">
+      <Project>{17745E6C-337C-44BD-9C50-5F1D45CEADA5}</Project>
+      <Name>DotNetBay.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DotNetBay.Model\DotNetBay.Model.csproj">
       <Project>{908d8739-3185-46eb-a03e-6b6c3849857c}</Project>
       <Name>DotNetBay.Model</Name>
