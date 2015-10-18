@@ -8,7 +8,7 @@ namespace DotNetBay.WPF.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (bool)value ? "Offen" : "Abgeschlossen";
+            return (bool)value ? "Valid" : "Closed";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
