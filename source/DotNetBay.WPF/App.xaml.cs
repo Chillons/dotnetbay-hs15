@@ -23,7 +23,7 @@ namespace DotNetBay.WPF
 
         public App()
         {
-
+            var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
 
             // Dummy Data 
             var memberService = new SimpleMemberService(MainRepository);
